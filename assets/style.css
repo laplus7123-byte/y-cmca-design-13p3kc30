@@ -423,8 +423,8 @@ p:last-child { margin-bottom: 0; }
 .about__links a { justify-content: space-between; width: 100%; }
 .mosaic { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; height: 480px; }
 .mosaic .col { display: grid; gap: 16px; min-height: 0; }
-.mosaic .col:first-child { grid-template-rows: 2fr 3fr; padding-bottom: 40px; }
-.mosaic .col:last-child { grid-template-rows: 3fr 2fr; padding-top: 40px; }
+.mosaic .col:first-child { grid-template-rows: minmax(0, 2fr) minmax(0, 3fr); padding-bottom: 40px; }
+.mosaic .col:last-child { grid-template-rows: minmax(0, 3fr) minmax(0, 2fr); padding-top: 40px; }
 .mosaic img { width: 100%; height: 100%; min-height: 0; object-fit: cover; border-radius: 8px; }
 
 /* ---------- contact strip ---------- */
@@ -649,7 +649,7 @@ textarea { min-height: 200px; resize: vertical; }
   .hero { padding: 12px 12px 0; }
   .hero__frame { height: auto; border-radius: 0; overflow: visible; }
   .hero__frame > img { height: 300px; border-radius: 12px; }
-  .hero__copy { left: 16px; bottom: auto; top: 136px; }
+  .hero__copy { left: 12px; bottom: auto; top: 8px; font-size: 20px; }
   .hero__caption { bottom: auto; top: 272px; right: 12px; }
   .hero__copy span { padding: 6px 12px; margin-top: 6px; }
   .hero__panel { position: static; width: auto; margin: 16px 8px 0; padding: 20px 8px 16px; border: 1px solid var(--line); }
@@ -666,8 +666,13 @@ textarea { min-height: 200px; resize: vertical; }
   .feature-list { grid-template-columns: 1fr; }
   .about { padding: 72px 0; }
   .about__inner { grid-template-columns: 1fr; gap: 40px; }
-  .mosaic { height: 340px; gap: 12px; }
-  .mosaic .col { gap: 12px; }
+  .mosaic { height: auto; gap: 12px; }
+  .mosaic .col { display: flex; flex-direction: column; gap: 12px; }
+  .mosaic .col:first-child { padding-bottom: 24px; }
+  .mosaic .col:last-child { padding-top: 24px; }
+  .mosaic img { flex: none; height: 130px; }
+  .mosaic .col:first-child img:last-child,
+  .mosaic .col:last-child img:first-child { height: 190px; }
   .help { padding: 72px 0 80px; background-position: 30% center; }
 
   .contact-strip { grid-template-columns: 1fr; gap: 20px; padding: 28px 24px; }
