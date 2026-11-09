@@ -267,7 +267,6 @@ p:last-child { margin-bottom: 0; }
   color: var(--white);
 }
 .fv__copy span { display: block; }
-.fv__caption { position: absolute; left: 56px; bottom: 88px; margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .08em; color: #33445e; }
 
 .fv-entry { position: relative; z-index: 2; margin-top: -52px; padding: 0 20px; }
 .fv-entry ul { display: grid; grid-template-columns: repeat(3, 1fr); max-width: var(--wrap); margin: 0 auto; padding: 0; list-style: none; border-radius: var(--radius); background: var(--accent-deep); overflow: hidden; }
@@ -652,7 +651,6 @@ textarea { min-height: 200px; resize: vertical; }
   html { scroll-padding-top: 88px; }
   .side-nav { top: 96px; }
   .top-service { padding: 0 20px; }
-  .fv__caption { left: 32px; }
 }
 
 @media (max-width: 900px) {
@@ -661,7 +659,6 @@ textarea { min-height: 200px; resize: vertical; }
   .fv__visual > img { object-position: 39% top; }
   /* 高さ600pxで画像幅900px・横位置39%のとき、樹氷のすき間の中心が 130px + 39% に来る */
   .fv__copy { left: calc(130px + 39%); font-size: 28px; }
-  .fv__caption { left: 20px; bottom: 56px; }
   .fv-entry { margin-top: -32px; }
   .fv-entry ul { grid-template-columns: 1fr; }
   .fv-entry li + li { border-left: 0; border-top: 1px solid rgba(255, 255, 255, .16); }
@@ -882,9 +879,13 @@ textarea { min-height: 200px; resize: vertical; }
   .svc-card { padding: 10px; }
   .svc-card__body { padding: 18px 12px 10px; }
   .sheet { width: calc(100% - 28px); padding: 56px 22px 64px; border-radius: 30px; }
-  .flow--cards { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 74%; gap: 36px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
-  .flow--cards li { scroll-snap-align: start; }
-  .flow--cards li:not(:last-child)::after { right: -28px; }
+  .flow--cards { grid-template-columns: 1fr; gap: 30px; }
+  .flow--cards li { display: grid; grid-template-columns: 72px 1fr; grid-template-areas: "icon step" "icon title" "icon text"; align-content: start; column-gap: 18px; padding: 22px 20px 24px; border-radius: 22px; }
+  .flow--cards .flow__icon { grid-area: icon; width: 72px; height: 72px; margin: 0; }
+  .flow--cards .step { grid-area: step; margin: 0; }
+  .flow--cards h3 { grid-area: title; margin: 8px 0 6px; font-size: 17px; text-align: left; }
+  .flow--cards p { grid-area: text; font-size: 14px; }
+  .flow--cards li:not(:last-child)::after { content: "\25BC\FE0E"; top: auto; right: auto; bottom: -24px; left: 50%; width: auto; font-size: 12px; transform: translateX(-50%); }
   .faq { grid-template-columns: 1fr; }
   .faq summary { grid-template-columns: 34px 1fr 12px; gap: 14px; padding: 18px 20px; font-size: 15px; }
   .faq__q { width: 34px; height: 34px; font-size: 16px; }
@@ -899,7 +900,15 @@ textarea { min-height: 200px; resize: vertical; }
 @media (max-width: 600px) {
   .float-cta { right: 12px; bottom: 12px; height: 50px; gap: 10px; padding: 0 7px 0 18px; font-size: 14px; }
   .float-cta .arrow { width: 32px; height: 32px; }
-  .site-footer { padding-bottom: 96px; }
+  .site-footer { padding: 48px 0 96px; }
+  .footer-nav { grid-template-columns: 1fr 1fr; gap: 18px 16px; }
+  .footer-nav h2 { margin: 0; }
+  .footer-nav ul { display: none; }
+  .footer-info { margin-top: 32px; padding-top: 32px; }
+  .footer-bottom { margin-top: 28px; }
+  .page-index .svc-cards { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 84%; gap: 12px; margin-inline: -22px; padding: 0 22px 4px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 22px; scrollbar-width: none; }
+  .page-index .svc-cards::-webkit-scrollbar { display: none; }
+  .page-index .svc-cards > li { display: flex; scroll-snap-align: start; }
 }
 
 
