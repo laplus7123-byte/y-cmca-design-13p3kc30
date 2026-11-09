@@ -1,0 +1,93 @@
+[
+ {
+  "key": "juhyo-zao",
+  "label": "蔵王の樹氷（山形市）",
+  "title": "Mt. Zao snow monsters (51843220026).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mt._Zao_snow_monsters_(51843220026).jpg",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "artist": "Raita Futo from Tokyo, Japan",
+  "src": "assets/img/juhyo-zao.jpg"
+ },
+ {
+  "key": "yamadera",
+  "label": "山寺（立石寺）",
+  "title": "View of Yamadera.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:View_of_Yamadera.jpg",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "artist": "Japanexperterna.se"
+ },
+ {
+  "key": "ginzan-snow",
+  "label": "銀山温泉（尾花沢市）",
+  "title": "Afternoon in Ginzan Onsen Town in January 2022 A.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Afternoon_in_Ginzan_Onsen_Town_in_January_2022_A.jpg",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "artist": "さかおり"
+ },
+ {
+  "key": "ginzan-night",
+  "label": "銀山温泉の夕景",
+  "title": "Evening twilight in Ginzan Onsen town January 2022 B.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Evening_twilight_in_Ginzan_Onsen_town_January_2022_B.jpg",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "artist": "さかおり"
+ },
+ {
+  "key": "kajo-sakura",
+  "label": "霞城公園の桜（山形市）",
+  "title": "霞城公園（山形城趾）の桜 昼.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:%E9%9C%9E%E5%9F%8E%E5%85%AC%E5%9C%92%EF%BC%88%E5%B1%B1%E5%BD%A2%E5%9F%8E%E8%B6%BE%EF%BC%89%E3%81%AE%E6%A1%9C_%E6%98%BC.jpg",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "artist": "Kirin7739"
+ },
+ {
+  "key": "tsuruoka-sakura",
+  "label": "鶴岡公園の桜",
+  "title": "Cherry blossoms in Tsuruoka Park 2024a.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cherry_blossoms_in_Tsuruoka_Park_2024a.jpg",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "artist": "掬茶"
+ },
+ {
+  "key": "tanada",
+  "label": "大蕨の棚田（山辺町）",
+  "title": "大蕨の棚田.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E8%95%A8%E3%81%AE%E6%A3%9A%E7%94%B0.jpg",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "artist": "三沢 克年"
+ },
+ {
+  "key": "okama",
+  "label": "蔵王の御釜",
+  "title": "Fall at Okama Crater Lake, Mt. Zao, Tohoku region, Japan.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Fall_at_Okama_Crater_Lake,_Mt._Zao,_Tohoku_region,_Japan.jpg",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "artist": "OKJaguar"
+ },
+ {
+  "key": "shogi",
+  "label": "天童の人間将棋",
+  "title": "Human Shogi at Mt. Maizuru in Tendo, Yamagata 2016 (27263758655).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Human_Shogi_at_Mt._Maizuru_in_Tendo,_Yamagata_2016_(27263758655).jpg",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "artist": "foooomio from Tokyo, Japan"
+ },
+ {
+  "key": "mogami",
+  "label": "最上川",
+  "title": "Mogami River Kusanagi Port.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mogami_River_Kusanagi_Port.jpg",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "artist": "さかおり"
+ }
+]
