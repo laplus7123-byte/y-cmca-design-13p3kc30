@@ -243,19 +243,20 @@ p:last-child { margin-bottom: 0; }
    25vw ＋ 130px より上には置かない（青空に重なると読みにくい）。下は利用者別メニューに重ならない位置まで */
 .fv__copy {
   position: absolute;
-  top: clamp(55%, calc(25vw + 130px), calc(100% - 200px));
+  top: clamp(55%, calc(25vw + 130px), calc(100% - 230px));
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
   font-size: clamp(32px, 4vw, 56px);
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.4;
   letter-spacing: .06em;
   text-align: center;
   white-space: nowrap;
   color: var(--accent-deep);
 }
-.fv__copy span { display: block; }
+.fv__copy span { display: block; width: fit-content; margin: 0 auto; padding: .08em .45em; background: rgba(255, 255, 255, .78); }
+.fv__copy span + span { margin-top: .22em; }
 
 .fv-entry { position: relative; z-index: 2; margin-top: -52px; padding: 0 20px; }
 .fv-entry ul { display: grid; grid-template-columns: repeat(3, 1fr); max-width: var(--wrap); margin: 0 auto; padding: 0; list-style: none; border-radius: var(--radius); background: var(--accent-deep); overflow: hidden; }
