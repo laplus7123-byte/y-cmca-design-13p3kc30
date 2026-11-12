@@ -276,6 +276,21 @@ p:last-child { margin-bottom: 0; }
 .fv-entry .ic { display: block; width: 48px; height: 48px; }
 .fv-entry .arrow { background: var(--white); color: var(--accent-deep); }
 
+/* オープニング（TOPを最初に開いたときだけ） */
+.opening { display: none; }
+.is-opening .opening { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: var(--white); animation: opening-out .8s cubic-bezier(.7, 0, .2, 1) 1.5s both; }
+.opening img { width: min(320px, 66vw); height: auto; animation: opening-logo .8s ease-out .15s both; }
+.is-opening .fv__visual > img { animation: fv-zoom 2.4s cubic-bezier(.2, .6, .2, 1) 1.5s both; }
+.is-opening .fv__copy span { animation: fv-copy .9s cubic-bezier(.3, .6, .2, 1) 2s both; }
+.is-opening .fv__copy span:nth-child(2) { animation-delay: 2.2s; }
+.is-opening .fv__copy span:nth-child(3) { animation-delay: 2.4s; }
+.is-opening .fv-entry { animation: fv-entry .7s ease-out 2.7s both; }
+@keyframes opening-logo { from { opacity: 0; transform: translateY(10px); } }
+@keyframes opening-out { to { transform: translateY(-100%); } }
+@keyframes fv-zoom { from { transform: scale(1.08); } }
+@keyframes fv-copy { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
+@keyframes fv-entry { from { opacity: 0; transform: translateY(16px); } }
+
 /* ---------- top: photos ---------- */
 
 .photo-strip { overflow: hidden; }
@@ -909,6 +924,13 @@ textarea { min-height: 200px; resize: vertical; }
   .page-index .svc-cards { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 84%; gap: 12px; margin-inline: -22px; padding: 0 22px 4px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 22px; scrollbar-width: none; }
   .page-index .svc-cards::-webkit-scrollbar { display: none; }
   .page-index .svc-cards > li { display: flex; scroll-snap-align: start; }
+  .top-service.is-hscroll .top-service__panel { position: sticky; overflow: hidden; padding: 36px 22px 32px; }
+  .top-service.is-hscroll .sec-head { margin-bottom: 24px; }
+  .top-service.is-hscroll .svc-cards { position: relative; overflow: visible; scroll-snap-type: none; will-change: transform; }
+}
+@media (max-width: 600px) and (max-height: 760px) {
+  .top-service.is-hscroll .lead { display: none; }
+  .top-service.is-hscroll .svc-card__photo img { aspect-ratio: 2 / 1; }
 }
 
 

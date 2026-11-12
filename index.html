@@ -40,6 +40,16 @@
   </div>
 </header>
 <main>
+<script>
+  try {
+    if (!sessionStorage.getItem('ycmca-opening') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      sessionStorage.setItem('ycmca-opening', '1');
+      document.documentElement.classList.add('is-opening');
+      setTimeout(() => document.documentElement.classList.remove('is-opening'), 3600);
+    }
+  } catch (e) {}
+</script>
+<div class="opening" aria-hidden="true"><img src="assets/img/logo.png" alt="" width="630" height="102"></div>
 <section class="fv">
   <div class="fv__visual">
     <img src="assets/img/juhyo-zao.jpg" alt="蔵王の樹氷と冬の青空" width="2400" height="1600">
@@ -389,7 +399,7 @@
       </details>
       <details>
         <summary><span class="faq__q" lang="en">Q</span>中小企業診断士として入会するには？</summary>
-        <p>入会申込書をご提出いただき、理事会の承認を経て入会となります。手続きと会費は<a class="text-link" href="signup.html">入会案内</a>をご覧ください。</p>
+        <p>まずはお問い合わせフォームからご連絡ください。当協会の会員から協会についてご説明し、入会申込書のご提出と理事会の承認を経て入会となります。手続きと会費は<a class="text-link" href="signup.html">入会案内</a>をご覧ください。</p>
       </details>
     </div>
   </div>
@@ -491,6 +501,36 @@
   });
   window.addEventListener('scroll', solid, { passive: true });
   solid();
+
+  const svc = document.querySelector('.page-index .top-service');
+  if (svc) {
+    const panel = svc.querySelector('.top-service__panel');
+    const track = svc.querySelector('.svc-cards');
+    const sp = matchMedia('(max-width: 600px)');
+    const still = matchMedia('(prefers-reduced-motion: reduce)');
+    let dist = 0;
+    const move = () => {
+      if (!svc.classList.contains('is-hscroll')) return;
+      const passed = parseFloat(panel.style.top) - svc.getBoundingClientRect().top;
+      track.style.transform = `translateX(${-Math.min(Math.max(passed, 0), dist)}px)`;
+    };
+    const layout = () => {
+      const on = sp.matches && !still.matches;
+      svc.classList.toggle('is-hscroll', on);
+      svc.style.height = panel.style.top = track.style.transform = '';
+      if (!on) return;
+      const last = track.lastElementChild;
+      dist = Math.max(0, last.offsetLeft + last.offsetWidth + parseFloat(getComputedStyle(track).paddingRight) - track.clientWidth);
+      panel.style.top = Math.min(h.offsetHeight + 8, innerHeight - panel.offsetHeight - 8) + 'px';
+      svc.style.height = panel.offsetHeight + dist + 'px';
+      move();
+    };
+    window.addEventListener('scroll', move, { passive: true });
+    window.addEventListener('resize', layout);
+    window.addEventListener('load', layout);
+    sp.addEventListener('change', layout);
+    layout();
+  }
 </script>
 </body>
 </html>

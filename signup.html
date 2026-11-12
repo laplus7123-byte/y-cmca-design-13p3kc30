@@ -301,6 +301,36 @@
   });
   window.addEventListener('scroll', solid, { passive: true });
   solid();
+
+  const svc = document.querySelector('.page-index .top-service');
+  if (svc) {
+    const panel = svc.querySelector('.top-service__panel');
+    const track = svc.querySelector('.svc-cards');
+    const sp = matchMedia('(max-width: 600px)');
+    const still = matchMedia('(prefers-reduced-motion: reduce)');
+    let dist = 0;
+    const move = () => {
+      if (!svc.classList.contains('is-hscroll')) return;
+      const passed = parseFloat(panel.style.top) - svc.getBoundingClientRect().top;
+      track.style.transform = `translateX(${-Math.min(Math.max(passed, 0), dist)}px)`;
+    };
+    const layout = () => {
+      const on = sp.matches && !still.matches;
+      svc.classList.toggle('is-hscroll', on);
+      svc.style.height = panel.style.top = track.style.transform = '';
+      if (!on) return;
+      const last = track.lastElementChild;
+      dist = Math.max(0, last.offsetLeft + last.offsetWidth + parseFloat(getComputedStyle(track).paddingRight) - track.clientWidth);
+      panel.style.top = Math.min(h.offsetHeight + 8, innerHeight - panel.offsetHeight - 8) + 'px';
+      svc.style.height = panel.offsetHeight + dist + 'px';
+      move();
+    };
+    window.addEventListener('scroll', move, { passive: true });
+    window.addEventListener('resize', layout);
+    window.addEventListener('load', layout);
+    sp.addEventListener('change', layout);
+    layout();
+  }
 </script>
 </body>
 </html>
