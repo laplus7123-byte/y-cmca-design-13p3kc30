@@ -72,7 +72,6 @@ p:last-child { margin-bottom: 0; }
   transition: background-color .3s, border-color .3s;
 }
 .site-header--overlay { position: fixed; left: 0; right: 0; }
-.site-header--overlay:not(.is-solid) { background: rgba(255, 255, 255, .12); border-bottom-color: rgba(255, 255, 255, .28); }
 .site-header__inner {
   display: flex;
   align-items: center;
@@ -84,10 +83,6 @@ p:last-child { margin-bottom: 0; }
 }
 .site-logo { margin-right: auto; }
 .site-logo img { height: 36px; width: auto; }
-.site-logo__white { display: none; }
-.site-header--overlay:not(.is-solid) .site-logo__color { display: none; }
-.site-header--overlay:not(.is-solid) .site-logo__white { display: block; }
-
 .gnav__list {
   display: flex;
   gap: 2px;
@@ -98,11 +93,6 @@ p:last-child { margin-bottom: 0; }
   background: rgba(226, 232, 241, .6);
   transition: background-color .3s;
 }
-.site-header--overlay:not(.is-solid) .gnav__list { background: rgba(255, 255, 255, .16); }
-.site-header--overlay:not(.is-solid) .gnav__list > li > a { color: var(--white); }
-.site-header--overlay:not(.is-solid) .gnav__list .has-sub > a .icon { color: #eef4fc; }
-.site-header--overlay:not(.is-solid) .gnav__list > li > a:hover,
-.site-header--overlay:not(.is-solid) .gnav__list > li > a[aria-current="page"] { background: var(--white); color: var(--accent-deep); }
 .gnav__list > li { position: relative; }
 .gnav__list > li > a {
   display: block;
@@ -156,10 +146,6 @@ p:last-child { margin-bottom: 0; }
 .head-contact__mail { display: inline-grid; place-items: center; flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--white); color: var(--accent); }
 .head-contact__mail .icon { width: 18px; height: 18px; stroke-width: 1.8; }
 .head-contact:hover { background: var(--accent-deep); }
-.site-header--overlay:not(.is-solid) .site-header__inner > .head-contact { background: var(--white); color: var(--accent-deep); }
-.site-header--overlay:not(.is-solid) .site-header__inner > .head-contact .head-contact__mail { background: var(--accent); color: var(--white); }
-.site-header--overlay:not(.is-solid) .site-header__inner > .head-contact:hover { background: var(--light); }
-
 .menu-toggle { display: none; }
 .drawer { display: none; }
 
@@ -252,7 +238,7 @@ p:last-child { margin-bottom: 0; }
 .fv__visual > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .fv__visual::after { content: ""; position: absolute; inset: 0; background: rgba(10, 38, 82, .08); }
 .fv__inner { position: relative; z-index: 1; height: 100%; }
-/* 写真中央の樹氷のすき間（空が下まで抜けている位置）にコピーを置く */
+/* 写真が雪と雲で明るいため、コピーは白ではなく濃紺で読ませる */
 .fv__copy {
   position: absolute;
   top: 17%;
@@ -264,7 +250,7 @@ p:last-child { margin-bottom: 0; }
   font-weight: 700;
   line-height: 1.75;
   letter-spacing: .14em;
-  color: var(--white);
+  color: var(--accent-deep);
 }
 .fv__copy span { display: block; }
 
@@ -299,12 +285,6 @@ p:last-child { margin-bottom: 0; }
 .photo-strip img { flex: none; width: 300px; height: 200px; margin-right: 24px; object-fit: cover; border-radius: var(--radius); }
 @keyframes photo-strip { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .photo-strip__track { animation: none; } }
-
-.credit-list { margin: 0; padding: 0; list-style: none; }
-.credit-list li { display: grid; grid-template-columns: 180px 1fr; gap: 24px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); }
-.credit-list img { width: 180px; height: 120px; object-fit: cover; border-radius: var(--radius); }
-.credit-list b { display: block; margin-bottom: 4px; }
-.credit-list p { margin: 0; font-size: 14px; line-height: 1.8; color: var(--muted); }
 
 /* ---------- top: business map ---------- */
 .top-biz__inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
@@ -650,7 +630,6 @@ textarea { min-height: 200px; resize: vertical; }
   .site-logo img { height: 30px; }
   .gnav,
   .site-header__inner > .head-contact { display: none; }
-  .site-header--overlay:not(.is-solid) .menu-toggle { color: var(--white); }
   .site-header:has(.drawer.is-open) { background: var(--white); }
   .menu-toggle {
     display: inline-flex;
@@ -712,9 +691,6 @@ textarea { min-height: 200px; resize: vertical; }
   .top-news { padding-bottom: 48px; }
   .photo-strip__track { animation-duration: 60s; }
   .photo-strip img { width: 195px; height: 130px; margin-right: 12px; }
-  .credit-list li { grid-template-columns: 105px 1fr; gap: 16px; align-items: start; }
-  .credit-list img { width: 105px; height: 70px; }
-  .credit-list p { font-size: 13px; }
   .top-service__panel { padding: 48px 20px; }
   .svc-cards { grid-template-columns: 1fr 1fr; }
   .pillars { grid-template-columns: 1fr; gap: 56px; margin-top: 64px; }
