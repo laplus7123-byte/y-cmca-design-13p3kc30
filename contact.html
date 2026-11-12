@@ -75,8 +75,8 @@
         </div>
       </fieldset>
       <div class="form-row">
-        <label for="f-org">ご所属<span class="req">必須</span></label>
-        <input type="text" id="f-org" name="org" autocomplete="organization" required>
+        <label for="f-org">会社名・ご所属<span class="opt">任意</span></label>
+        <input type="text" id="f-org" name="org" autocomplete="organization">
       </div>
       <div class="form-row">
         <label for="f-mail">メールアドレス<span class="req">必須</span></label>
@@ -114,7 +114,7 @@
 (() => {
   const topic = new URLSearchParams(location.search).get('topic');
   const body = document.getElementById('f-body');
-  if (topic && body && !body.value) body.value = '【ご相談のテーマ】' + topic.slice(0, 40) + '\n';
+  if (topic && body && !body.value) body.value = '【お問い合わせのテーマ】' + topic.slice(0, 40) + '\n';
 })();
 </script>
 </main>

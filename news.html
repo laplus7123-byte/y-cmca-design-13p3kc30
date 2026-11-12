@@ -80,6 +80,9 @@
     const tabs = document.querySelectorAll('.news-filter a');
     const items = document.querySelectorAll('.news-list li[data-cat]');
     const empty = document.querySelector('.news-list__empty');
+    tabs.forEach((a) => {
+      if (a.hash && ![...items].some((li) => '#' + li.dataset.cat === a.hash)) a.parentElement.hidden = true;
+    });
     const filter = () => {
       const cat = [...tabs].some((a) => a.hash && a.hash === location.hash) ? location.hash.slice(1) : '';
       let shown = 0;
