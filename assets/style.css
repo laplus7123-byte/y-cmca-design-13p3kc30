@@ -862,6 +862,7 @@ textarea { min-height: 200px; resize: vertical; }
 }
 @media (max-width: 374px) {
   .page-index .top-service .svc-cards { grid-auto-columns: 92%; }
+  .flow--cards li p { font-size: 13px; }
 }
 
 /* 協会の特長：白いカード */
@@ -878,11 +879,20 @@ textarea { min-height: 200px; resize: vertical; }
 .page-index #flow .eyebrow { color: #cfe0f5; }
 .page-index #flow .lead { color: #e1ebf8; }
 .flow--cards { gap: 40px; }
-.flow--cards li { position: relative; padding: 32px 26px 36px; border-radius: 30px; background: var(--white); }
+.flow--cards li { position: relative; padding: 32px 22px 36px; border-radius: 30px; background: var(--white); }
 .flow--cards li:not(:last-child)::after { content: "\25B6\FE0E"; position: absolute; top: 50%; right: -30px; width: 20px; font-size: 16px; line-height: 1; text-align: center; color: var(--white); transform: translateY(-50%); }
 .flow--cards .flow__icon { display: block; width: 96px; height: 96px; margin: 20px auto 0; }
 .flow--cards .step { display: block; width: fit-content; margin-inline: auto; padding: 2px 14px; border-radius: 999px; background: var(--light); font-size: 13px; letter-spacing: .08em; color: var(--accent-deep); }
 .flow--cards h3 { margin: 18px 0 10px; font-size: 19px; text-align: center; color: var(--accent-deep); }
+.flow--cards h3,
+.flow--cards p { word-break: keep-all; overflow-wrap: anywhere; }
+@media (min-width: 901px) and (max-width: 1100px) {
+  .flow--cards { gap: 28px; }
+  .flow--cards li { padding: 28px 16px 30px; }
+  .flow--cards li:not(:last-child)::after { right: -24px; }
+  .flow--cards .flow__icon { width: 80px; height: 80px; }
+  .flow--cards h3 { font-size: 17px; }
+}
 .page-index #flow .pill--primary { border-color: var(--white); background: var(--white); color: var(--accent-deep); }
 .page-index #flow .pill--primary .arrow { background: var(--accent); color: var(--white); }
 .page-index #flow .pill--primary:hover { background: var(--light); }
