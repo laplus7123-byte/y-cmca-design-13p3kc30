@@ -928,7 +928,7 @@ textarea { min-height: 200px; resize: vertical; }
   .sheet { width: calc(100% - 28px); padding: 56px 22px 64px; border-radius: 30px; }
   .flow--cards { grid-template-columns: 1fr; gap: 30px; }
   .flow--cards li { display: grid; grid-template-columns: 72px 1fr; grid-template-areas: "icon step" "icon title" "icon text"; align-content: start; column-gap: 18px; padding: 22px 20px 24px; border-radius: 22px; }
-  .flow--cards .flow__icon { grid-area: icon; width: 72px; height: 72px; margin: 0; }
+  .flow--cards .flow__icon { grid-area: icon; align-self: center; width: 72px; height: 72px; margin: 0; }
   .flow--cards .step { grid-area: step; margin: 0; }
   .flow--cards h3 { grid-area: title; margin: 8px 0 6px; font-size: 17px; text-align: left; }
   .flow--cards p { grid-area: text; font-size: 14px; }
