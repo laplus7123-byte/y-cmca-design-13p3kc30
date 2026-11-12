@@ -851,9 +851,17 @@ textarea { min-height: 200px; resize: vertical; }
 .svc-card p { margin-bottom: 16px; font-size: 14px; line-height: 1.9; color: var(--muted); }
 .svc-card .tags { margin: 0 0 24px; }
 .svc-card .tags li { background: var(--white); }
-.svc-card__more { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; font-size: 14px; font-weight: 700; color: var(--accent-deep); }
-.svc-card__more .arrow { width: 40px; height: 28px; transition: background-color .2s, transform .2s; }
-.svc-card:hover .svc-card__more .arrow { background: var(--accent-deep); transform: translateX(4px); }
+.svc-card__more { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding: 6px 6px 6px 20px; border: 1px solid #c9d6e8; border-radius: 999px; background: var(--white); font-size: 14px; font-weight: 700; white-space: nowrap; color: var(--accent-deep); transition: border-color .2s; }
+.svc-card__more .arrow { flex-shrink: 0; width: 40px; height: 28px; transition: background-color .2s, transform .2s; }
+.svc-card:hover .svc-card__more { border-color: var(--accent-deep); }
+.svc-card:hover .svc-card__more .arrow { background: var(--accent-deep); transform: translateX(2px); }
+@media (max-width: 600px) {
+  .svc-card__more { gap: 8px; padding: 5px 5px 5px 16px; font-size: min(14px, 3.7vw); }
+  .svc-card__more .arrow { width: 34px; height: 26px; }
+}
+@media (max-width: 374px) {
+  .page-index .top-service .svc-cards { grid-auto-columns: 92%; }
+}
 
 /* 協会の特長：白いカード */
 .page-index .strengths { gap: 24px; }
