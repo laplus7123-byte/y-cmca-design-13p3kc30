@@ -238,25 +238,23 @@ p:last-child { margin-bottom: 0; }
 .fv__visual > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .fv__visual::after { content: ""; position: absolute; inset: 0; background: rgba(10, 38, 82, .08); }
 .fv__inner { position: relative; z-index: 1; height: 100%; }
-/* 写真中央の雪と樹氷（白い面）の上にコピーを置き、濃紺で読ませる。
-   横長の画面では写真が幅いっぱいに広がり樹氷の上端が下がる（画像の高さ＝幅÷1.5、上端はその約37%）ので、
-   25vw ＋ 130px より上には置かない（青空に重なると読みにくい）。下は利用者別メニューに重ならない位置まで */
+/* 左端はヘッダーのロゴにそろえる。下は利用者別メニューに重ならない位置まで */
 .fv__copy {
   position: absolute;
-  top: clamp(55%, calc(25vw + 130px), calc(100% - 230px));
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: min(52%, calc(100% - 240px));
+  left: max(32px, calc((100% - 1400px) / 2 + 32px));
+  transform: translateY(-50%);
   margin: 0;
-  font-size: clamp(32px, 4vw, 56px);
+  font-size: clamp(44px, 5.4vw, 78px);
   font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: .06em;
-  text-align: center;
+  line-height: 1.3;
+  letter-spacing: .04em;
   white-space: nowrap;
   color: var(--accent-deep);
 }
-.fv__copy span { display: block; width: fit-content; margin: 0 auto; padding: .08em .45em; background: rgba(255, 255, 255, .78); }
-.fv__copy span + span { margin-top: .22em; }
+.fv__copy span { display: block; width: fit-content; padding: .1em .36em .14em; background: rgba(255, 255, 255, .85); }
+.fv__copy span:nth-child(-n+2) { padding: .3em .78em; font-size: .46em; letter-spacing: .1em; }
+.fv__copy span + span { margin-top: 8px; }
 
 .fv-entry { position: relative; z-index: 2; margin-top: -52px; padding: 0 20px; }
 .fv-entry ul { display: grid; grid-template-columns: repeat(3, 1fr); max-width: var(--wrap); margin: 0 auto; padding: 0; list-style: none; border-radius: var(--radius); background: var(--accent-deep); overflow: hidden; }
@@ -676,7 +674,7 @@ textarea { min-height: 200px; resize: vertical; }
 @media (max-width: 900px) {
   .section { padding: 72px 0; }
   .fv__visual { height: 600px; }
-  .fv__copy { font-size: 30px; }
+  .fv__copy { left: 20px; font-size: min(40px, 10vw); }
   .fv-entry { margin-top: -32px; }
   .fv-entry ul { grid-template-columns: 1fr; }
   .fv-entry li + li { border-left: 0; border-top: 1px solid rgba(255, 255, 255, .16); }
