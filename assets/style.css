@@ -238,17 +238,22 @@ p:last-child { margin-bottom: 0; }
 .fv__visual > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .fv__visual::after { content: ""; position: absolute; inset: 0; background: rgba(10, 38, 82, .08); }
 .fv__inner { position: relative; z-index: 1; height: 100%; }
-/* 左上の青空にコピーを置く。写真の樹氷の上端（画像の高さの約37%）より下に出ない大きさにする */
+/* 写真中央の雪と樹氷（白い面）の上にコピーを置き、濃紺で読ませる。
+   横長の画面では写真が幅いっぱいに広がり樹氷の上端が下がる（画像の高さ＝幅÷1.5、上端はその約37%）ので、
+   25vw ＋ 130px より上には置かない（青空に重なると読みにくい）。下は利用者別メニューに重ならない位置まで */
 .fv__copy {
   position: absolute;
-  top: 120px;
-  left: max(32px, calc((100% - 1400px) / 2 + 32px));
+  top: clamp(55%, calc(25vw + 130px), calc(100% - 200px));
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 0;
-  font-size: clamp(32px, 3.4vw, 50px);
+  font-size: clamp(32px, 4vw, 56px);
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.45;
   letter-spacing: .06em;
-  color: var(--white);
+  text-align: center;
+  white-space: nowrap;
+  color: var(--accent-deep);
 }
 .fv__copy span { display: block; }
 
@@ -670,8 +675,7 @@ textarea { min-height: 200px; resize: vertical; }
 @media (max-width: 900px) {
   .section { padding: 72px 0; }
   .fv__visual { height: 600px; }
-  .fv__visual > img { object-position: 15% top; }
-  .fv__copy { top: 96px; left: 24px; font-size: 28px; }
+  .fv__copy { font-size: 30px; }
   .fv-entry { margin-top: -32px; }
   .fv-entry ul { grid-template-columns: 1fr; }
   .fv-entry li + li { border-left: 0; border-top: 1px solid rgba(255, 255, 255, .16); }
