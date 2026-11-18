@@ -231,6 +231,8 @@ p:last-child { margin-bottom: 0; }
 .sec-title { font-size: clamp(26px, 3vw, 34px); letter-spacing: .04em; color: var(--accent-deep); }
 .lead { margin-top: 16px; color: var(--muted); max-width: 46em; }
 .note { margin-top: 24px; color: var(--muted); font-size: 15px; }
+.split h3 { margin: 1.6em 0 .6em; font-size: 18px; color: var(--accent-deep); }
+.split h3:first-child { margin-top: 0; }
 .sub-title { font-size: 22px; margin: 64px 0 20px; }
 
 /* ---------- top: first view ---------- */
@@ -791,8 +793,10 @@ textarea { min-height: 200px; resize: vertical; }
 }
 .float-cta:hover { background: var(--accent-deep); }
 .float-cta .arrow { width: 36px; height: 36px; background: var(--white); color: var(--accent); }
-.float-cta { opacity: 0; visibility: hidden; transition: background-color .2s, opacity .3s, visibility .3s; }
-.float-cta.is-shown { opacity: 1; visibility: visible; }
+.float-cta { opacity: 0; visibility: hidden; pointer-events: none; transition: background-color .2s, opacity .3s, visibility .3s; }
+.float-cta.is-shown { opacity: 1; visibility: visible; pointer-events: auto; }
+/* フッターのリンク（連合会など）と重なる位置では隠す */
+.float-cta.is-footer-hidden { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
 .page-contact .float-cta { display: none; }
 
 /* ---------- TOP: 淡い水色の地に、角の大きい白い面を重ねる ---------- */
@@ -934,7 +938,8 @@ textarea { min-height: 200px; resize: vertical; }
 @media (max-width: 600px) {
   .float-cta { right: 12px; bottom: 12px; height: 50px; gap: 10px; padding: 0 7px 0 18px; font-size: 14px; }
   .float-cta .arrow { width: 32px; height: 32px; }
-  .site-footer { padding: 48px 0 96px; }
+  .footer-bottom ul { padding-right: 0; width: 100%; }
+  .site-footer { padding: 48px 0 48px; }
   .footer-nav { grid-template-columns: 1fr 1fr; gap: 18px 16px; }
   .footer-nav h2 { margin: 0; }
   .footer-nav ul { display: none; }
